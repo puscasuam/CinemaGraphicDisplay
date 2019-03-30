@@ -1,0 +1,22 @@
+<?import javafx.geometry.Insets?>
+        <?import javafx.scene.layout.GridPane?>
+
+        <?import javafx.scene.control.Button?>
+        <?import javafx.scene.control.Label?>
+
+
+        <?import javafx.scene.layout.HBox?>
+        <?import javafx.scene.layout.VBox?>
+<HBox fx:controller="sample.MainController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+<VBox spacing="40">
+    <Label text="Options:"/>
+    <Button text="Movie CRUD" fx:id="btnMovieCRUD" onAction="#btnMovieCRUDClick"/>
+    <Button text="Client CRUD" fx:id="btnClientCRUD" onAction="#btnClientCRUDClick"/>
+    <Button text="Reservation CRUD" fx:id="btnReservationCRUD" onAction="#btnReservationCRUDClick"/>
+
+
+</VBox>
+
+
+</HBox>

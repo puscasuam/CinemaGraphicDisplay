@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<HBox fx:controller="sample.ClientCRUDController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+
+
+    <VBox spacing="10">
+        <Label text="Clients:"/>
+        <TableView fx:id="tableViewClients" editable="true">
+            <columns>
+                <TableColumn fx:id="tableColumnId" text="Id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnCNP" text="CNP">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="CNP"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnFidelityPoints" text="Fidelity points">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="fidelityPoints"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnLastName" text="Last name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastName"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnFirstName" text="First name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="firstName"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnDateOfBirth" text="Date of birth">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateOfBirth"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnDateOfRegistration" text="Date of registration">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateOfRegistration"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+            </columns>
+        </TableView>
+        <TextField fx:id="txtClientID" promptText="ID"/>
+        <TextField fx:id="txtClientCNP" promptText="CNP"/>
+        <TextField fx:id="txtClientFidelityPoints" promptText="FidelityPoints"/>
+        <TextField fx:id="txtClientLastName" promptText="LastName"/>
+        <TextField fx:id="txtClientFirstName" promptText="FirstName"/>
+        <TextField fx:id="txtClientDateOfBirth" promptText="DateOfBirth"/>
+        <TextField fx:id="txtClientDateOfRegistration" promptText="DateOfRegistration"/>
+
+        <HBox alignment="center" spacing="40">
+            <Button fx:id="btnAddClient" text="Add or update Client" onAction="#btnAddClientClick"/>
+            <Button fx:id="btnDeleteClient" text="Delete Client" onAction="#btnDeleteClientClick"/>
+        </HBox>
+
+    </VBox>
+
+</HBox>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<HBox fx:controller="sample.MovieCRUDController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+
+<VBox spacing="10">
+    <Label text="Movies:"/>
+    <TableView fx:id="tableViewMovies" editable="true">
+        <columns>
+            <TableColumn fx:id="tableColumnId" text="Id">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="tableColumnTitle" text="Title">
+                <cellValueFactory>
+                    <PropertyValueFactory property="title"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="tableColumnReleaseDate" text="Release date">
+                <cellValueFactory>
+                    <PropertyValueFactory property="releaseDate"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="tableColumnPrice" text="Price">
+                <cellValueFactory>
+                    <PropertyValueFactory property="price"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="tableColumnOnCinema" text="On cinema">
+                <cellValueFactory>
+                    <PropertyValueFactory property="onCinema"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <TextField fx:id="txtMovieID" promptText="ID"/>
+    <TextField fx:id="txtMovieTitle" promptText="Title"/>
+    <TextField fx:id="txtMovieReleaseDate" promptText="ReleaseDate"/>
+    <TextField fx:id="txtMoviePrice" promptText="Price"/>
+    <CheckBox fx:id="chkOnCinema" text="On cinema"/>
+
+    <HBox alignment="center" spacing="40">
+        <Button fx:id="btnAddMovie" text="Add or update Movie" onAction="#btnAddMovieClick"/>
+        <Button fx:id="btnDeleteMovie" text="Delete Movie" onAction="#btnDeleteMovieClick"/>
+    </HBox>
+
+</VBox>
+
+</HBox>
