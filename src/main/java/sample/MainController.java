@@ -77,6 +77,24 @@ public class MainController {
     }
 
     public void btnReservationCRUDClick(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/ReservationCRUD.fxml"));
 
+            Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
+            Stage stage = new Stage();
+            stage.setTitle("Reservation CRUD");
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+
+            ReservationCRUDController controller = fxmlLoader.getController();
+            controller.setService(reservationService);
+
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            Logger logger = Logger.getLogger(getClass().getName());
+            logger.log(Level.SEVERE, "Failed to create new window: Reservation CRUD.", e);
+        }
     }
 }

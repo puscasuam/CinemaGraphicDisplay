@@ -1,75 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<HBox fx:controller="sample.ClientCRUDController"
-      xmlns:fx="http://javafx.com/fxml" alignment="center">
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox alignment="center" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ClientCRUDController">
 
 
     <VBox spacing="10">
-        <Label text="Clients:"/>
-        <TableView fx:id="tableViewClients" editable="true">
+        <Label text="Clients:" />
+        <TableView fx:id="tableViewClients" editable="true" fixedCellSize="0.0" tableMenuButtonVisible="true">
             <columns>
                 <TableColumn fx:id="tableColumnId" text="Id">
                     <cellValueFactory>
-                        <PropertyValueFactory property="id"/>
+                        <PropertyValueFactory property="id" />
                     </cellValueFactory>
                 </TableColumn>
 
                 <TableColumn fx:id="tableColumnCNP" text="CNP">
                     <cellValueFactory>
-                        <PropertyValueFactory property="CNP"/>
+                        <PropertyValueFactory property="CNP" />
                     </cellValueFactory>
                 </TableColumn>
 
                 <TableColumn fx:id="tableColumnFidelityPoints" text="Fidelity points">
                     <cellValueFactory>
-                        <PropertyValueFactory property="fidelityPoints"/>
+                        <PropertyValueFactory property="fidelityPoints" />
                     </cellValueFactory>
                 </TableColumn>
 
                 <TableColumn fx:id="tableColumnLastName" text="Last name">
                     <cellValueFactory>
-                        <PropertyValueFactory property="lastName"/>
+                        <PropertyValueFactory property="lastName" />
                     </cellValueFactory>
                 </TableColumn>
 
                 <TableColumn fx:id="tableColumnFirstName" text="First name">
                     <cellValueFactory>
-                        <PropertyValueFactory property="firstName"/>
+                        <PropertyValueFactory property="firstName" />
                     </cellValueFactory>
                 </TableColumn>
 
                 <TableColumn fx:id="tableColumnDateOfBirth" text="Date of birth">
                     <cellValueFactory>
-                        <PropertyValueFactory property="dateOfBirth"/>
+                        <PropertyValueFactory property="dateOfBirth" />
                     </cellValueFactory>
                 </TableColumn>
 
-                <TableColumn fx:id="tableColumnDateOfRegistration" text="Date of registration">
+                <TableColumn fx:id="tableColumnDateOfRegistration" prefWidth="81.0" text="Date of registration">
                     <cellValueFactory>
-                        <PropertyValueFactory property="dateOfRegistration"/>
+                        <PropertyValueFactory property="dateOfRegistration" />
                     </cellValueFactory>
                 </TableColumn>
 
             </columns>
         </TableView>
-        <TextField fx:id="txtClientID" promptText="ID"/>
-        <TextField fx:id="txtClientCNP" promptText="CNP"/>
-        <TextField fx:id="txtClientFidelityPoints" promptText="FidelityPoints"/>
-        <TextField fx:id="txtClientLastName" promptText="LastName"/>
-        <TextField fx:id="txtClientFirstName" promptText="FirstName"/>
-        <TextField fx:id="txtClientDateOfBirth" promptText="DateOfBirth"/>
-        <TextField fx:id="txtClientDateOfRegistration" promptText="DateOfRegistration"/>
+        <TextField fx:id="txtClientID" promptText="ID" />
+        <TextField fx:id="txtClientCNP" promptText="CNP" />
+        <TextField fx:id="txtClientFidelityPoints" promptText="fidelity points" />
+        <TextField fx:id="txtClientLastName" promptText="last name" />
+        <TextField fx:id="txtClientFirstName" promptText="first name" />
+        <TextField fx:id="txtClientDateOfBirth" promptText="date of birth" />
+        <TextField fx:id="txtClientDateOfRegistration" promptText="date of registration" />
 
         <HBox alignment="center" spacing="40">
-            <Button fx:id="btnAddClient" text="Add or update Client" onAction="#btnAddClientClick"/>
-            <Button fx:id="btnDeleteClient" text="Delete Client" onAction="#btnDeleteClientClick"/>
+            <Button fx:id="btnAddClient" onAction="#btnAddClientClick" text="Add or update client" />
+            <Button fx:id="btnDeleteClient" onAction="#btnDeleteClientClick" text="Delete client" />
         </HBox>
 
     </VBox>
