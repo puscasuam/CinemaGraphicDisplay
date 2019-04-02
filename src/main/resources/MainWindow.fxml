@@ -1,19 +1,19 @@
-<?import javafx.geometry.Insets?>
-        <?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-        <?import javafx.scene.control.Button?>
-        <?import javafx.scene.control.Label?>
+<?import javafx.scene.AmbientLight?>
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-
-        <?import javafx.scene.layout.HBox?>
-        <?import javafx.scene.layout.VBox?>
-<HBox fx:controller="sample.MainController"
-      xmlns:fx="http://javafx.com/fxml" alignment="center">
+<HBox alignment="center" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
 <VBox spacing="40">
-    <Label text="Options:"/>
-    <Button text="Movie CRUD" fx:id="btnMovieCRUD" onAction="#btnMovieCRUDClick"/>
-    <Button text="Client CRUD" fx:id="btnClientCRUD" onAction="#btnClientCRUDClick"/>
-    <Button text="Reservation CRUD" fx:id="btnReservationCRUD" onAction="#btnReservationCRUDClick"/>
+    <Label text="Options:" />
+    <Button fx:id="btnMovieCRUD" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onAction="#btnMovieCRUDClick" text="Movie CRUD" textAlignment="JUSTIFY" textFill="#171616" />
+    <Button fx:id="btnClientCRUD" maxWidth="1.7976931348623157E308" onAction="#btnClientCRUDClick" text="Client CRUD" />
+    <Button fx:id="btnReservationCRUD" maxWidth="1.7976931348623157E308" onAction="#btnReservationCRUDClick" text="Reservation CRUD" />
+
 
 
 </VBox>

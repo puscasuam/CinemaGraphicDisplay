@@ -1,54 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<HBox fx:controller="sample.MovieCRUDController"
-      xmlns:fx="http://javafx.com/fxml" alignment="center">
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10">
-    <Label text="Movies:"/>
+<HBox alignment="center" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="sample.MovieCRUDController">
+
+<VBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="504.0" prefWidth="700.0" spacing="10">
+    <Label text="Movies:" />
     <TableView fx:id="tableViewMovies" editable="true">
         <columns>
-            <TableColumn fx:id="tableColumnId" text="Id">
+            <TableColumn fx:id="tableColumnId" prefWidth="62.0" text="Id">
                 <cellValueFactory>
-                    <PropertyValueFactory property="id"/>
+                    <PropertyValueFactory property="id" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="tableColumnTitle" text="Title">
+            <TableColumn fx:id="tableColumnTitle" prefWidth="268.0" text="Title">
                 <cellValueFactory>
-                    <PropertyValueFactory property="title"/>
+                    <PropertyValueFactory property="title" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="tableColumnReleaseDate" text="Release date">
+            <TableColumn fx:id="tableColumnReleaseDate" prefWidth="158.0" text="Release date">
                 <cellValueFactory>
-                    <PropertyValueFactory property="releaseDate"/>
+                    <PropertyValueFactory property="releaseDate" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="tableColumnPrice" text="Price">
+            <TableColumn fx:id="tableColumnPrice" prefWidth="87.0" text="Price">
                 <cellValueFactory>
-                    <PropertyValueFactory property="price"/>
+                    <PropertyValueFactory property="price" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="tableColumnOnCinema" text="On cinema">
+            <TableColumn fx:id="tableColumnOnCinema" prefWidth="124.0" text="On cinema">
                 <cellValueFactory>
-                    <PropertyValueFactory property="onCinema"/>
+                    <PropertyValueFactory property="onCinema" />
                 </cellValueFactory>
             </TableColumn>
         </columns>
     </TableView>
-    <TextField fx:id="txtMovieID" promptText="ID"/>
-    <TextField fx:id="txtMovieTitle" promptText="Title"/>
-    <TextField fx:id="txtMovieReleaseDate" promptText="ReleaseDate"/>
-    <TextField fx:id="txtMoviePrice" promptText="Price"/>
-    <CheckBox fx:id="chkOnCinema" text="On cinema"/>
+    <TextField fx:id="txtMovieID" promptText="ID" />
+    <TextField fx:id="txtMovieTitle" promptText="Title" />
+    <TextField fx:id="txtMovieReleaseDate" promptText="ReleaseDate" />
+    <TextField fx:id="txtMoviePrice" promptText="Price" />
+    <CheckBox fx:id="chkOnCinema" text="On cinema" />
 
     <HBox alignment="center" spacing="40">
-        <Button fx:id="btnAddMovie" text="Add or update Movie" onAction="#btnAddMovieClick"/>
-        <Button fx:id="btnDeleteMovie" text="Delete Movie" onAction="#btnDeleteMovieClick"/>
+        <Button fx:id="btnAddMovie" onAction="#btnAddMovieClick" text="Add or update Movie" />
+        <Button fx:id="btnDeleteMovie" onAction="#btnDeleteMovieClick" text="Delete Movie" />
     </HBox>
+      <HBox.margin>
+         <Insets bottom="50.0" />
+      </HBox.margin>
 
 </VBox>
 
