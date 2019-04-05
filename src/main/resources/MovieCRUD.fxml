@@ -45,10 +45,10 @@
         </columns>
     </TableView>
     <TextField fx:id="txtMovieID" promptText="ID" />
-    <TextField fx:id="txtMovieTitle" promptText="Title" />
-    <TextField fx:id="txtMovieReleaseDate" promptText="ReleaseDate" />
-    <TextField fx:id="txtMoviePrice" promptText="Price" />
-    <CheckBox fx:id="chkOnCinema" text="On cinema" />
+    <TextField fx:id="txtMovieTitle" promptText="title" />
+    <TextField fx:id="txtMovieReleaseDate" promptText="release date (dd.MM.yyyy)" />
+    <TextField fx:id="txtMoviePrice" promptText="price" />
+    <CheckBox fx:id="chkOnCinema" text="on cinema" />
 
     <HBox alignment="center" spacing="40">
         <Button fx:id="btnAddMovie" onAction="#btnAddMovieClick" text="Add or update Movie" />

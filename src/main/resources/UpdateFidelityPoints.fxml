@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+<HBox alignment="center" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="sample.UpdateFidelityPointsController">
+
+    <VBox maxWidth="1.7976931348623157E308" prefHeight="759.0" prefWidth="737.0" spacing="10">
+        <Label text="Clients:"/>
+        <TableView fx:id="tableViewClients" editable="true" fixedCellSize="0.0" maxHeight="-Infinity"
+                   maxWidth="1.7976931348623157E308" prefHeight="275.0" prefWidth="737.0" tableMenuButtonVisible="true">
+            <columns>
+                <TableColumn fx:id="tableColumnId" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="41.0"
+                             resizable="false" text="Id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnCNP" prefWidth="86.00001525878906" text="CNP">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="CNP"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnFidelityPoints" minWidth="0.0" prefWidth="66.0" text="Fidelity points">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="fidelityPoints"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnLastName" prefWidth="123.0" text="Last name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastName"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnFirstName" prefWidth="122.0" text="First name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="firstName"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnDateOfBirth" prefWidth="165.0" text="Date of birth">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateOfBirth"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnDateOfRegistration" prefWidth="82.0" text="Date of registration">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateOfRegistration"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+            <VBox.margin>
+                <Insets/>
+            </VBox.margin>
+        </TableView>
+
+        <Label text="Incrementation:"/>
+        <TextField fx:id="txtClientIncrementOfFidelityPoints" promptText="new value"/>
+        <Label text="From:"/>
+        <TextField fx:id="txtClientTFFirstDate" promptText="date of birth (dd.MM.yyyy)"/>
+        <Label text="To:"/>
+        <TextField fx:id="txtClientTFSecondDate" promptText="date of birth (dd.MM.yyyy)"/>
+
+        <HBox alignment="center" spacing="40">
+            <Button fx:id="btnUpdateFidelityPoints" onAction="#btnUpdateFidelityPointsClick"
+                    text="Update fidelity points"/>
+        </HBox>
+        <HBox.margin>
+            <Insets right="50.0"/>
+        </HBox.margin>
+    </VBox>
+
+</HBox>
+

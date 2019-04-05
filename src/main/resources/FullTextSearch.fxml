@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="center" spacing="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="sample.FullTextSearchController">
+
+
+    <VBox alignment="center">
+        <Label text="Movies:"/>
+    </VBox>
+
+    <HBox alignment="center" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="504.0"
+          prefWidth="700.0" spacing="10">
+        <TableView fx:id="tableViewMovies" editable="true">
+            <columns>
+                <TableColumn fx:id="tableMovieColumnId" prefWidth="62.0" text="Id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableMovieColumnTitle" prefWidth="268.0" text="Title">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="title"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableMovieColumnReleaseDate" prefWidth="158.0" text="Release date">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="releaseDate"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableMovieColumnPrice" prefWidth="87.0" text="Price">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableMovieColumnOnCinema" prefWidth="124.0" text="On cinema">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="onCinema"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </HBox>
+
+    <VBox alignment="center">
+        <Label text="Clients:"/>
+    </VBox>
+
+    <HBox alignment="center" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="504.0"
+          prefWidth="700.0" spacing="10">
+        <TableView fx:id="tableViewClients" editable="true">
+            <columns>
+                <TableColumn fx:id="tableClientColumnId" maxWidth="1.7976931348623157E308" minWidth="-1.0"
+                             prefWidth="41.0" resizable="false" text="Id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableClientColumnCNP" prefWidth="86.00001525878906" text="CNP">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="CNP"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableClientColumnFidelityPoints" minWidth="0.0" prefWidth="66.0"
+                             text="Fidelity points">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="fidelityPoints"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableClientColumnLastName" prefWidth="123.0" text="Last name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastName"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableClientColumnFirstName" prefWidth="122.0" text="First name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="firstName"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableClientColumnDateOfBirth" prefWidth="165.0" text="Date of birth (dd.MM.yyyy)">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateOfBirth"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableClientColumnDateOfRegistration" prefWidth="82.0" text="Date of registration (dd.MM.yyyy)">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateOfRegistration"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
+
+    </HBox>
+
+    <VBox alignment="CENTER" spacing="20"  >
+        <Label text="Searched text:" />
+        <TextField fx:id="txtFullTextSearch" prefHeight="31.0" prefWidth="700.0" promptText="word1 word2 word3"/>
+        <Button fx:id="btFullTextSearch" onAction="#btnFullTextSearchClick" text="Search in movies and clients fields"/>
+    </VBox>
+
+    <VBox alignment="center" spacing="40">
+        <VBox.margin>
+            <Insets top="20.0"/>
+        </VBox.margin>
+    </VBox>
+
+</VBox>

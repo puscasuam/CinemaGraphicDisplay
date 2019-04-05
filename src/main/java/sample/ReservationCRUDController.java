@@ -1,6 +1,5 @@
 package sample;
 
-import Domain.Movie;
 import Domain.Reservation;
 import Service.ReservationService;
 import javafx.application.Platform;
@@ -27,6 +26,7 @@ public class ReservationCRUDController {
     public Button btnAddReservation;
     public Button btnDeleteReservation;
 
+
     private ObservableList<Reservation> reservations = FXCollections.observableArrayList();
     private ReservationService reservationService;
 
@@ -52,9 +52,9 @@ public class ReservationCRUDController {
         alert.showAndWait();
 
         try {
-            Integer id = Integer.parseInt(txtReservationID.getText());
-            Integer movieId = Integer.parseInt(txtReservationMovieId.getText());
-            Integer idClient = Integer.parseInt(txtReservationClientId.getText());
+            int id = Integer.parseInt(txtReservationID.getText());
+            int movieId = Integer.parseInt(txtReservationMovieId.getText());
+            int idClient = Integer.parseInt(txtReservationClientId.getText());
             String date = txtReservationDate.getText();
             String time = txtReservationTime.getText();
 
@@ -90,6 +90,7 @@ public class ReservationCRUDController {
             }
         }
     }
+
 
 }
 

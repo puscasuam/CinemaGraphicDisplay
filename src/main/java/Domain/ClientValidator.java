@@ -20,7 +20,7 @@ public class ClientValidator implements IValidator<Client> {
             throw new RuntimeException("Last name should be given");
         }
 
-        SimpleDateFormat format = new SimpleDateFormat("dd.mm.yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
         format.setLenient(false);
 
         try {

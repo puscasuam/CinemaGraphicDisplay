@@ -89,7 +89,7 @@ public class ClientService extends IsSearchable<Client> {
         List<Integer> clientsOnInterval = new ArrayList<>();
 
         //validation for start date and end date
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.mm.yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         dateFormat.setLenient(false);
         Calendar firstDate = Calendar.getInstance();
         Calendar lastDate = Calendar.getInstance();
@@ -110,7 +110,7 @@ public class ClientService extends IsSearchable<Client> {
                 throw new DataFormatException("The date is not in a correct format!");
             }
 
-            if (currentDate.after(firstDate) && (currentDate.before(lastDate))) {
+            if (currentDate.compareTo(firstDate) >= 0  && currentDate.compareTo(lastDate) <= 0) {
                 clientsOnInterval.add(i.getId());
             }
         }

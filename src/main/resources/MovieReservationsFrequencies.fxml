@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox alignment="center" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ShowMoviesOrderedByReservationsController">
+
+
+    <VBox maxWidth="500" prefHeight="759." prefWidth="500" spacing="10">
+        <Label text="Movies ordered by reservation's frequencies:" />
+        <TableView fx:id="tableViewMovieFrequenciesOnReservations" editable="true" fixedCellSize="0.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="299.0" prefWidth="737.0" tableMenuButtonVisible="true">
+            <columns>
+                <TableColumn fx:id="tableColumnTitle" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="360.0" text="Title">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="title" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="tableColumnFrequencies" prefWidth="139.0" text="Frequencies">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="frequencies" />
+                    </cellValueFactory>
+                </TableColumn>
+
+            </columns>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </TableView>
+      <HBox.margin>
+         <Insets top="20.0" />
+      </HBox.margin>
+
+
+    </VBox>
+
+</HBox>

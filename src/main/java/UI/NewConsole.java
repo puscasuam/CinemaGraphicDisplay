@@ -34,7 +34,7 @@ public class NewConsole {
         System.out.println("remove client,id");
         System.out.println("showall clients");
         System.out.println();
-        System.out.println("add/update reservation,id,movie id,id client,date(dd.mm.yy),time(hh:mm)");
+        System.out.println("add/update reservation,id,movie id,id client,date(dd.MM.yyyy),time(hh:mm)");
         System.out.println("remove reservation,id");
         System.out.println("showall reservations");
         System.out.println();

@@ -236,7 +236,7 @@ public class ReservationService extends IsSearchable<Reservation> {
         List<Integer> reservationsOnInterval = new ArrayList<>();
 
         //validation for start date and end date
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.mm.yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         dateFormat.setLenient(false);
         Calendar firstDate = Calendar.getInstance();
         Calendar lastDate = Calendar.getInstance();

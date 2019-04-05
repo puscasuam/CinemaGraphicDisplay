@@ -12,7 +12,7 @@ public class ReservationValidator implements IValidator<Reservation>{
             throw new RuntimeException("This is an invalid id number");
         }
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.mm.yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         dateFormat.setLenient(false);
 
         try {

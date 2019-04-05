@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
 
 <HBox alignment="center" fillHeight="false" xmlns="http://javafx.com/javafx/8.0.172-ea"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ReservationCRUDController">
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ReservationsTimeFrameController">
 
     <VBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
           prefHeight="599.0" prefWidth="700.0" spacing="10">
@@ -54,16 +49,14 @@
             </columnResizePolicy>
 
         </TableView>
-        <TextField fx:id="txtReservationID" promptText="ID"/>
-        <TextField fx:id="txtReservationMovieId" promptText="movie Id "/>
-        <TextField fx:id="txtReservationClientId" promptText="client Id (-1 for unknown client card)"/>
-        <TextField fx:id="txtReservationDate" promptText="date (dd.MM.yyyy)"/>
-        <TextField fx:id="txtReservationTime" promptText="time (hh:mm)"/>
-
+        <Label text="From:"/>
+        <TextField fx:id="txtReservationsTFFirstLimit" promptText="hh:mm"/>
+        <Label text="To:"/>
+        <TextField fx:id="txtReservationsTFSecondLimit" promptText="hh:mm"/>
 
         <HBox alignment="center" spacing="40">
-            <Button fx:id="btnAddReservation" onAction="#btnAddReservationClick" text="Add or update reservation"/>
-            <Button fx:id="btnDeleteReservation" onAction="#btnDeleteReservationClick" text="Delete reservation"/>
+            <Button fx:id="btnShowReservationTimeFrame" onAction="#btnShowReservationTimeFrameClick"
+                    text="Show reservation time frame"/>
         </HBox>
         <HBox.margin>
             <Insets right="50.0"/>

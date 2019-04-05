@@ -72,7 +72,7 @@ public class Console {
                     handleDeleteReservationBetweenTwoDates();
                     break;
                 case "9":
-                    handleIncrementationofFidelityPoints();
+                    handleIncrementationOfFidelityPoints();
                     break;
                 case "x":
                     return;
@@ -223,15 +223,15 @@ public class Console {
     }
 
 
-    private void handleIncrementationofFidelityPoints() {
+    private void handleIncrementationOfFidelityPoints() {
 
         System.out.println("Enter the value of incrementation:");
         int increment = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("Enter start date (dd.mm.yyyy):");
+        System.out.println("Enter start date (dd.MM.yyyy):");
         String startDate = scanner.nextLine();
 
-        System.out.println("Enter end date(dd.mm.yyyy):");
+        System.out.println("Enter end date(dd.MM.yyyy):");
         String endDate = scanner.nextLine();
 
         List<Client> updateFidelityPointDependingOnDateOfBirth = clientService.updateFidelityPointDependingOnDateOfBirth(increment, startDate, endDate);
@@ -394,10 +394,10 @@ public class Console {
     }
 
     private void handleDeleteReservationBetweenTwoDates() {
-        System.out.println("Enter start date (dd.mm.yyyy):");
+        System.out.println("Enter start date (dd.MM.yyyy):");
         String startDate = scanner.nextLine();
 
-        System.out.println("Enter end date(dd.mm.yyyy):");
+        System.out.println("Enter end date(dd.MM.yyyy):");
         String endDate = scanner.nextLine();
 
         List<Reservation> reservationsDateInterval = reservationService.deleteReservationsBetweenTwoDates(startDate, endDate);

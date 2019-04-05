@@ -35,7 +35,7 @@ public class Main extends Application {
         mainController.setServices(movieService, clientService, reservationService);
 
         primaryStage.setTitle("Movie manager");
-        primaryStage.setScene(new Scene(root, 500, 500));
+        primaryStage.setScene(new Scene(root, 500, 700));
         primaryStage.show();
     }
 
