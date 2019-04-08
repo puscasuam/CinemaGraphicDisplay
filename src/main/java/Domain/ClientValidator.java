@@ -21,9 +21,9 @@ public class ClientValidator implements IValidator<Client> {
         }
 
         SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-        format.setLenient(false);
+            format.setLenient(false);
 
-        try {
+            try {
             format.parse(client.getDateOfBirth());
 
         } catch (ParseException pe) {

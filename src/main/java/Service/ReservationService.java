@@ -210,6 +210,7 @@ public class ReservationService extends IsSearchable<Reservation> {
      * @return a map - key - movieID, object - frequencies
      */
     private Map<Integer, Integer> countFrequencies() {
+
         Map<Integer, Integer> frequencies = new HashMap<>();
 
         for (Reservation reservation : reservationRepository.getAll()) {

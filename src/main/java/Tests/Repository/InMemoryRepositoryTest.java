@@ -39,10 +39,10 @@ class InMemoryRepositoryTest {
     @Test
     void insertOrUpdateShouldCorrectlyUpdateAnEntity() {
         movieIRepositoryitory.insertOrUpdate(movieTest);
-        List<Movie> movies = movieIRepositoryitory.getAll();
 
         Movie secondMovieTest = new Movie(1, "Deadpool2", "18.05.18", 25.0, false);
         movieIRepositoryitory.insertOrUpdate(secondMovieTest);
+        List<Movie> movies = movieIRepositoryitory.getAll();
         assertEquals(1, movies.size());
         assertEquals("Deadpool2", movies.get(0).getTitle());
     }
@@ -54,6 +54,7 @@ class InMemoryRepositoryTest {
         assertEquals(1, movies.size());
 
         movieIRepositoryitory.remove(movieTest.getId());
+        movies = movieIRepositoryitory.getAll();
         assertEquals(0, movies.size());
     }
 
