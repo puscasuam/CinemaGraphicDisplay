@@ -9,6 +9,22 @@ import java.util.Date;
 public class ReservationValidator implements IValidator<Reservation> {
 
     public void validate(Reservation reservation) throws DataFormatException {
+        int id = reservation.getId(), reversedId = 0, remainder, originalId;
+        originalId = id;
+
+        while(id !=0){
+            remainder = id % 10;
+            reversedId = reversedId * 10 + remainder;
+            id /= 10;
+        }
+
+        if(originalId != reversedId){
+            throw new RuntimeException("This id is not a palindrome number");
+        }
+
+
+
+
         if (reservation.getId() <= 0) {
             throw new RuntimeException("This is an invalid id number");
         }

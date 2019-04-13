@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ClientServiceTest {
@@ -25,8 +26,10 @@ class ClientServiceTest {
         clientService.addOrUpdate(1, "1234567891243", 0, "Popescu", "Ionel", "12.04.1989", "12.12.2018");
         assertEquals(1, clientService.getAll().size());
 
+        Client client = new Client(2, "1234567891263", 10, "Vasilescu", "Mihai", "12.04.1989", "12.12.2018");
         clientService.addOrUpdate(2, "1234567891263", 10, "Vasilescu", "Mihai", "12.04.1989", "12.12.2018");
         assertEquals(2, clientService.getAll().size());
+        assertDoesNotThrow(() -> clintValidator.validate(client));
     }
 
     @Test

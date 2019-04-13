@@ -9,9 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ReservationValidatorTest {
 
-
     private ReservationValidator validator = new ReservationValidator();
-
 
     @Test
     void validateShouldPass() {

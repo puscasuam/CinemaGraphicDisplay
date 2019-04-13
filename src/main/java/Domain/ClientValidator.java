@@ -8,9 +8,24 @@ import java.util.Date;
 
 public class ClientValidator implements IValidator<Client> {
     public void validate(Client client) throws DataFormatException {
+
+        int id = client.getId(), reversedId = 0, remainder, originalId;
+        originalId = id;
+
+        while(id !=0){
+            remainder = id % 10;
+            reversedId = reversedId * 10 + remainder;
+            id /= 10;
+        }
+
+        if(originalId != reversedId){
+            throw new RuntimeException("This id is not a palindrome number");
+        }
+
         if (client.getId() <= 0) {
             throw new RuntimeException("This is an invalid id number");
         }
+
 
         if (client.getFirstName() == null || client.getFirstName().isEmpty()) {
             throw new RuntimeException("First name should be given");
@@ -21,9 +36,9 @@ public class ClientValidator implements IValidator<Client> {
         }
 
         SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-            format.setLenient(false);
+        format.setLenient(false);
 
-            try {
+        try {
             format.parse(client.getDateOfBirth());
 
         } catch (ParseException pe) {
